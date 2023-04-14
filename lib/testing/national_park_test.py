@@ -1,7 +1,8 @@
+import pytest
+
 from classes.national_park import NationalPark
 from classes.visitor import Visitor
 from classes.trip import Trip
-import pytest
 
 class TestNationalParks:
     '''NationalPark in national_park.py'''
@@ -15,14 +16,16 @@ class TestNationalParks:
         '''NationalPark is initialized with a name of type str'''
         np = NationalPark("Wild West")
         assert (isinstance(np.name, str))
-        np_2 = NationalPark(2)
-        assert (not hasattr(np_2, "_name"))
 
+        with pytest.raises(Exception):
+            NationalPark(2)
+     
     def test_name_setter(self):
         '''Cannot change the name of the NationalPark'''
         np = NationalPark("under the sea")
-        np.name = "over the sea"
-        assert (np.name == "under the sea")
+        
+        with pytest.raises(Exception):
+            np.name = "over the sea"
 
     def test_has_many__trips(self):
         '''NationalPark has many Trips.'''
@@ -34,9 +37,9 @@ class TestNationalParks:
         t_3 = Trip(vis, p2, "January 5th","January 20th")
 
         assert (len(p1.trips()) == 2)
-        assert (t_1 in p1.orders())
-        assert (t_2 in p1.orders())
-        assert (not t_3 in p1.orders())
+        assert (t_1 in p1.trips())
+        assert (t_2 in p1.trips())
+        assert (not t_3 in p1.trips())
 
     def test_trips_of_type_trips(self):
         '''National Park trips are of type '''
@@ -55,11 +58,11 @@ class TestNationalParks:
 
         p1 = NationalPark('Alaska Wilds')
         
-        t_1 = Trip(vis, p1, 2)
-        t_2 = Trip(vis2, p1, 5)
+        t_1 = Trip(vis, p1, '2/2', '2/3')
+        t_2 = Trip(vis2, p1, '2/5', '2/9')
 
-        assert (p1 in vis.nationalparks())
-        assert (p1 in vis2.nationalparks())
+        assert (vis in p1.visitors())
+        assert (vis2 in p1.visitors())
 
     def test_has_unique_visitors(self):
         '''NationalParks has unique list of all the visitors that have visited.'''
@@ -82,7 +85,7 @@ class TestNationalParks:
         t_1 = Trip(vis, p1, "May 5th", "May 9th")
         t_2 = Trip(vis, p1, "June 20th", "July 4th")
         t_3 = Trip(vis, p1, "January 5th","January 20th")
-        assert (len(p1.total_visits()) == 3)
+        assert p1.total_visits() == 3
     
     def test_best_visitor(self):
         '''Get the visitor that visited the park the most'''

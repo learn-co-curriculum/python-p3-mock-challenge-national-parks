@@ -70,7 +70,7 @@ build out any helper methods if needed.
 #### NationalPark
 
 - `NationalPark __init__(self, name)`
-  - NationalParks should be initialized with a name, as a string
+  - national_parks should be initialized with a name, as a string
 - `NationalPark property name`
   - Returns the NationalPark's name
   - Should not be able to change after the NationalPark is created
@@ -86,11 +86,11 @@ build out any helper methods if needed.
 
 #### Trip
 
-- `Trip property Visitor`
+- `Trip property visitor`
   - Returns the visitor object for that trip
   - Must be of type `Visitor`
   - `raise Exception` if setter fails
-- `Trip property NationalPark`
+- `Trip property national_park`
   - Returns the NationalPark object for that trip
   - Must be of type `NationalPark`
   - `raise Exception` if setter fails
@@ -100,7 +100,7 @@ build out any helper methods if needed.
 - `Visitor trips()`
   - Returns a list of all trips for that visitor
   - The list of trips must contain type `Trip`
-- `Visitor nationalparks()`
+- `Visitor national_parks()`
   - Returns a **unique** list of all parks who that visitor has visited.
   - The list of national parks must contain type `NationalPark` 
 
@@ -114,12 +114,6 @@ build out any helper methods if needed.
   - The list of visitors must contain type `Visitor`
 
 ### Aggregate and Association Methods
-
-#### Visitor
-
-- `Visitors create_trip(national_park, start_date, end_date)`
-  - given a **national park object**, a start_date and end_date (as a string),
-    creates a new Trip and associates it with that visitor and national park.
 
 #### National Park
 
