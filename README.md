@@ -65,6 +65,7 @@ build out any helper methods if needed.
   - Return name
   - Names must be of type `str`
   - Names must be between 1 and 15 characters, inclusive
+  - `raise Exception` if setter fails
 
 #### NationalPark
 
@@ -73,7 +74,8 @@ build out any helper methods if needed.
 - `NationalPark property name`
   - Returns the NationalPark's name
   - Should not be able to change after the NationalPark is created
-  - hint: hasattr()
+  - `raise Exception` if setter fails
+  - _hint: hasattr()_
 
 #### Trip
 
@@ -87,9 +89,11 @@ build out any helper methods if needed.
 - `Trip property Visitor`
   - Returns the visitor object for that trip
   - Must be of type `Visitor`
+  - `raise Exception` if setter fails
 - `Trip property NationalPark`
   - Returns the NationalPark object for that trip
   - Must be of type `NationalPark`
+  - `raise Exception` if setter fails
 
 #### Visitors
 
@@ -114,12 +118,12 @@ build out any helper methods if needed.
 #### Visitor
 
 - `Visitors create_trip(national_park, start_date, end_date)`
-  - given a **national park object**, a start_date and end_date (as a string), creates a
-    new Trip and associates it with that visitor and national park.
+  - given a **national park object**, a start_date and end_date (as a string),
+    creates a new Trip and associates it with that visitor and national park.
 
 #### National Park
 
 - `NationalPark total_visits()`
   - Returns the total number of times that park has been visited
 - `NationalPark best_visitor()`
-  - Returns the Visitor 
+  - Returns the Visitor who has visited the park the most
