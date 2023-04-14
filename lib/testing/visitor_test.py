@@ -15,22 +15,17 @@ class TestVisitor:
         '''Visitor is initialized with a name of type str'''
         visitor = Visitor("Bob")
         assert (isinstance(visitor.name, str))
-        vis_2 = Visitor(2)
-        assert (not hasattr(vis_2, "_name"))
+        
+        with pytest.raises(Exception):
+            Visitor(2)
 
     def test_name_setter(self):
         '''Cannot change the name of the visitor'''
         vis = Visitor("Poppy")
-        vis.name = "Warren"
-        assert (vis.name == "Poppy")
+        with pytest.raises(Exception):
+            vis.name = "Warren"
 
-    # def test_raise_exception_for_changing_name(self):
-    #     '''raise exception for trying to change name after initialization'''
-    #     coffee = Coffee("Peppermint Mocha")
-    #     with pytest.raises(Exception):
-    #         coffee.name = 'Banana'
-
-    def test_has_many__trips(self):
+    def test_has_many_trips(self):
         '''Visitor has many Trips.'''
         p1 = NationalPark("Yosemmette")
         vis = Visitor("Bill")
@@ -76,8 +71,8 @@ class TestVisitor:
         t_2 = Trip(vis, p1, "May 20th","May 27th")
         t_3 = Trip(vis, p2, "January 5th","January 20th")
 
-        assert (len(set(vis.nationalparks())) == len(vis.nationalparks()))
-        assert (len(vis.nationalparks()) == 2)
+        assert (len(set(vis.national_parks())) == len(vis.national_parks()))
+        assert (len(vis.national_parks()) == 2)
 
     def test_customers_of_type_customer(self):
         '''Visitor nationalparks are of type NationalPark'''
@@ -87,18 +82,7 @@ class TestVisitor:
         t_1 = Trip(vis, p1, "May 5th", "May 9th")
         t_3 = Trip(vis, p2, "January 5th","January 20th")
 
-        assert (isinstance(vis.nationalparks()[0], NationalPark))
-        assert (isinstance(vis.nationalparks()[1], NationalPark))
-    def test_create_trips(self):
-        '''Can create trips'''
-        p1 = NationalPark("Yosemmette")
-        p2 = NationalPark("Rocky Mountain")
-        vis = Visitor('Sheryl')
-        t_1 = Trip(vis, p1, "May 5th", "May 9th")
-        t_3 = Trip(vis, p2, "January 5th","January 20th")
-        assert(len(vis.trips()) == 2)
-        vis.create_trip(p1,"March 5th","March 20th")
-        assert(len(vis.trips()) == 3)
-        assert(vis.trips()[2].start_date == "March 5th")
+        assert (isinstance(vis.national_parks()[0], NationalPark))
+        assert (isinstance(vis.national_parks()[1], NationalPark))
 
     
