@@ -10,29 +10,16 @@ class Trip:
         self.national_park = national_park
         self.start_date = start_date
         self.end_date = end_date
-<<<<<<< HEAD
-    
-    #property stuff
-    def get_visitor( self ):
-        return self._visitor 
-    
-=======
         Trip.all.append(self)
 
     def get_visitor( self ):
         return self._visitor 
 
->>>>>>> 92e4d09ec80c348e44188f28cbd46419b930a503
     def set_visitor( self, visitor ):
         if isinstance(visitor, Visitor):
             self._visitor = visitor 
         else:
             raise Exception("Visitor must be a Visitor object")
-<<<<<<< HEAD
-    
-    visitor = property( get_visitor, set_visitor )
-            
-=======
 
     visitor = property(get_visitor, set_visitor)
 
@@ -46,4 +33,3 @@ class Trip:
             raise Exception("")
         
     national_park = property(get_national_park, set_national_park)
->>>>>>> 92e4d09ec80c348e44188f28cbd46419b930a503
