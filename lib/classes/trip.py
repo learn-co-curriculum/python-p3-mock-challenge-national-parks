@@ -14,7 +14,7 @@ class Trip:
 
     @visitor.setter
     def name(self, visitor):
-        if isinstance(visitor, Visitor):
+        if not isinstance(visitor, Visitor):
             raise Exception
         else:
             self._visitor = visitor
@@ -25,7 +25,7 @@ class Trip:
 
     @national_park.setter
     def national_park(self, national_park):
-        if isinstance(national_park, NationalPark):
+        if not isinstance(national_park, NationalPark):
             raise Exception
         else:
             self._national_park = national_park

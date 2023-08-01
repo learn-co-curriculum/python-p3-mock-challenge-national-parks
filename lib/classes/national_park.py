@@ -1,6 +1,3 @@
-from collections import Counter
-
-
 class NationalPark:
     all = []
 
@@ -14,7 +11,7 @@ class NationalPark:
 
     @name.setter
     def name(self, name):
-        if type(name) is str and not hasattr(self, "_name"):
+        if isinstance(name, str) and not hasattr(self, "name"):
             self._name = name
         else:
             raise Exception
@@ -46,3 +43,4 @@ class NationalPark:
         return max(cls.all, key=lambda park: park.total_visits())
 
 from classes.trip import Trip
+from collections import Counter

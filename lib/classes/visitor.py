@@ -14,7 +14,7 @@ class Visitor:
         if (
             isinstance(name, str)
             and 1 <= len(name) <= 15
-            and not hasattr(self, "_name")
+            and not hasattr(self, "name")
         ):
             self._name = name
         else:
