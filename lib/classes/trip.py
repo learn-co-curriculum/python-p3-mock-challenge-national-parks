@@ -6,3 +6,6 @@ class Trip:
         self.national_park = national_park
         self.start_date = start_date
         self.end_date = end_date
+
+from classes.national_park import NationalPark
+from classes.visitor import Visitor

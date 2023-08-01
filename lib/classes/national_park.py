@@ -2,15 +2,11 @@ class NationalPark:
 
     def __init__(self, name):
         self.name = name
-        self._trips = []
-        self._visitors = []
         
-    def trips(self, new_trip=None):
-        from classes.trip import Trip
+    def trips(self):
         pass
     
-    def visitors(self, new_visitor=None):
-        from classes.visitor import Visitor
+    def visitors(self):
         pass
     
     def total_visits(self):
@@ -18,3 +14,5 @@ class NationalPark:
     
     def best_visitor(self):
         pass
+
+from classes.trip import Trip
