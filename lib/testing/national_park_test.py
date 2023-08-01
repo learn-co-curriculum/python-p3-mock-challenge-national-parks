@@ -4,7 +4,6 @@ from classes.national_park import NationalPark
 from classes.visitor import Visitor
 from classes.trip import Trip
 
-
 class TestNationalParks:
     """NationalPark in national_park.py"""
 
