@@ -132,15 +132,18 @@ build out any helper methods if needed.
   - _hint: will need a way to remember all `NationalPark` objects_
   - _hint: do you have a method to get the total visits for a
     particular `NationalPark` object?_
-  - Uncomment lines in the national_park_test file
+  - Uncomment lines 105-113 in the national_park_test file
 ### Bonus: For any invalid inputs raise an `Exception`.
-
-Uncomment the following lines in the test files:
-
+#### First, comment out the following lines:
 #### national_park_test.py
-
-- lines 20-21 and 29-30
+- lines 28-29
 
 #### visitor_test.py
+- lines 27-28
 
-- lines 20-21 and 29-30
+#### Then, uncomment the following lines in the test files:
+#### national_park_test.py
+- lines 20-21 and 31-32
+
+#### visitor_test.py
+- lines 20-21 and 30-31

@@ -23,6 +23,7 @@ class TestVisitor:
     def test_name_setter(self):
         '''Cannot change the name of the visitor'''
         vis = Visitor("Poppy")
+        # comment the next two lines if using Exceptions
         vis.name = "Warren"
         assert (vis.name == "Poppy")
         

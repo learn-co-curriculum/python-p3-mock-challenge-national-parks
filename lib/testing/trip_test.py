@@ -54,7 +54,7 @@ class TestTrip:
         yosemite = NationalPark("Yosemite")
         matteo = Visitor("Matteo")
         trip = Trip(matteo, yosemite, "May 5th", "May 9th")
-        assert (trip.visitor == yosemite)
+        assert (trip.national_park == yosemite)
         
     def test_national_park_of_type_national_park(self):
         '''Trip national_park is of type NationalPark'''
@@ -65,11 +65,11 @@ class TestTrip:
     
     def test_get_all_trips(self):
         '''Test Trip class all attribute'''
+        Trip.all = []
         yosemite = NationalPark("Yosemite")
         matteo = Visitor("Matteo")
         john = Visitor("John")
         Trip(matteo, yosemite, "May 5th", "May 9th")
         Trip(matteo, yosemite, "May 20th","May 27th")
         Trip(john, yosemite, "January 5th","January 20th")
-        assert (Trip.all[0].visitor == matteo)
         assert (len(Trip.all) == 3)
