@@ -13,8 +13,8 @@ class NationalPark:
     def name(self, name):
         if isinstance(name, str) and not hasattr(self, "name"):
             self._name = name
-        else:
-            raise Exception
+        # else:
+        #     raise Exception
 
     def trips(self):
         return [trip for trip in Trip.all if trip.national_park is self]
@@ -37,10 +37,11 @@ class NationalPark:
 
         # VERSION 3
         return max(set(visitors), key=visitors.count)
-    
+
     @classmethod
     def most_visited(cls):
         return max(cls.all, key=lambda park: park.total_visits())
+
 
 from classes.trip import Trip
 from collections import Counter
