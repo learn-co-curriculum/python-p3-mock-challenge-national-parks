@@ -60,7 +60,7 @@ build out any helper methods if needed.
 #### Visitor
 
 - `Visitor __init__(self, name)`
-  - Visitor should be initialized with a name
+  - Visitor is initialized with a name
 - `Visitor property name`
   - Returns the visitor's name
   - Names must be of type `str`
@@ -70,7 +70,7 @@ build out any helper methods if needed.
 #### NationalPark
 
 - `NationalPark __init__(self, name)`
-  - NationalPark should be initialized with a name, as a string
+  - NationalPark is initialized with a name, as a string
 - `NationalPark property name`
   - Returns the national_park's name
   - Names must be of type `str`
@@ -81,18 +81,18 @@ build out any helper methods if needed.
 #### Trip
 
 - `Trip __init__(self, visitor, national_park, start_date, end_date)`
-  - Trip should be initialized with a visitor, national_park, start_date(str), end_date(str)
+  - Trip is initialized with a visitor, national_park, start_date(str), end_date(str)
 - `Trip property start_date`
   - Returns the trip's start_date
   - Start_date must be of type `str`
   - Start_date length must be greater or equal to 7 characters
-  - Should be in the format "September 1st"
+  - Is in the format "September 1st"
   - Should **be able** to change after the trip is created
 - `Trip property end_date`
   - Returns the trip's end_date
   - End_date must be of type `str`
   - End_date length must be greater or equal to 7 characters
-  - Should be in the format "September 1st"
+  - Is in the format "September 1st"
   - Should **be able** to change after the trip is created
 ### Object Relationship Methods and Properties
 
