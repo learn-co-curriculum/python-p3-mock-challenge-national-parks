@@ -22,7 +22,8 @@ start coding_. Remember to identify a single source of truth for your data.
 
 ## Instructions
 
-To get started, run `pipenv install` while inside of this directory. Then run `pipenv shell` to jump into the shell.
+To get started, run `pipenv install` while inside of this directory.
+Then run `pipenv shell` to jump into the shell.
 
 Build out all of the methods listed in the deliverables. The methods are listed
 in a suggested order, but you can feel free to tackle the ones you think are
@@ -65,7 +66,7 @@ build out any helper methods if needed.
   - Returns the visitor's name
   - Names must be of type `str`
   - Names must be between 1 and 15 characters, inclusive
-  - Should **be able** to change after the visitor is created
+  - Should **be able** to change after the visitor is instantiated
 
 #### NationalPark
 
@@ -75,25 +76,26 @@ build out any helper methods if needed.
   - Returns the national_park's name
   - Names must be of type `str`
   - Names length must be greater or equal to 3 characters
-  - Should **not be able** to change after the national_park is created
+  - Should **not be able** to change after the national_park is instantiated
   - _hint: hasattr()_
 
 #### Trip
 
 - `Trip __init__(self, visitor, national_park, start_date, end_date)`
-  - Trip is initialized with a visitor, national_park, start_date(str), end_date(str)
+  - Trip is initialized with a `Visitor` instance, a `NationalPark` instance, a start_date, and an end_date
 - `Trip property start_date`
   - Returns the trip's start_date
   - Start_date must be of type `str`
   - Start_date length must be greater or equal to 7 characters
   - Is in the format "September 1st"
-  - Should **be able** to change after the trip is created
+  - Should **be able** to change after the trip is instantiated
 - `Trip property end_date`
   - Returns the trip's end_date
   - End_date must be of type `str`
   - End_date length must be greater or equal to 7 characters
   - Is in the format "September 1st"
-  - Should **be able** to change after the trip is created
+  - Should **be able** to change after the trip is instantiated
+
 ### Object Relationship Methods and Properties
 
 #### Trip
