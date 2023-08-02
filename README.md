@@ -109,19 +109,19 @@ build out any helper methods if needed.
 
 - `Visitor trips()`
   - Returns a list of all trips for that visitor
-  - The list of trips must contain objects of type `Trip`
+  - Trips must be of type `Trip`
 - `Visitor national_parks()`
-  - Returns a **unique** list of all parks who that visitor has visited.
-  - The list of national parks must contain objects of type `NationalPark` 
+  - Returns a **unique** list of all parks that visitor has visited
+  - Parks must be of type `NationalPark` 
 
 #### NationalPark
 
 - `NationalPark trips()`
-  - Returns a list of all trips planned for this national park
-  - The list of trips must contain objects of type `Trip`
+  - Returns a list of all trips at a particular national park
+  - Trips must be of type `Trip`
 - `NationalPark visitors()`
-  - Returns a **unique** list of all visitors a national park has received
-  - The list of visitors must contain objects of type `Visitor`
+  - Returns a **unique** list of all visitors a particular national park has welcomed
+  - Visitors must be of type `Visitor`
 
 ### Aggregate and Association Methods
 
@@ -129,15 +129,17 @@ build out any helper methods if needed.
 
 - `NationalPark total_visits()`
   - Returns the total number of times a park has been visited
+  - Returns `0` if the park has no visits 
 - `NationalPark best_visitor()`
   - Returns the Visitor instance that has visited that park the most
+  - Returns `None` if the park has no visitors
 
 #### Visitor
 
 - `Visitor total_visits_at_park()`
   - Receives a NationalPark instance as argument
   - Returns the total number of times a visitor visited the park passed in as argument
-  - Returns 0 if the visitor has never visited the park
+  - Returns `0` if the visitor has never visited the park
 
 ### Bonus: Aggregate and Association Method
 
@@ -147,7 +149,7 @@ build out any helper methods if needed.
   - _hint: will need a way to remember all `NationalPark` objects_
   - _hint: do you have a method to get the total visits for a
     particular `NationalPark` object?_
-  - Uncomment lines 104-112 in the national_park_test file
+  - Uncomment lines 127-135 in the national_park_test file
 ### Bonus: For any invalid inputs raise an `Exception`.
 - First, **comment out** the following lines
   - **national_park_test.py**
