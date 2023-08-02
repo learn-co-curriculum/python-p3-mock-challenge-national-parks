@@ -136,8 +136,8 @@ build out any helper methods if needed.
 
 #### Visitor
 
-- `Visitor total_visits_at_park()`
-  - Receives a NationalPark instance as argument
+- `Visitor total_visits_at_park(park)`
+  - Receives a **NationalPark object** as argument
   - Returns the total number of times a visitor visited the park passed in as argument
   - Returns `0` if the visitor has never visited the park
 
@@ -150,7 +150,9 @@ build out any helper methods if needed.
   - _hint: do you have a method to get the total visits for a
     particular `NationalPark` object?_
   - Uncomment lines 127-135 in the national_park_test file
+
 ### Bonus: For any invalid inputs raise an `Exception`.
+
 - First, **comment out** the following lines
   - **national_park_test.py**
     - lines 34-35
