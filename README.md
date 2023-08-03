@@ -23,6 +23,7 @@ start coding_. Remember to identify a single source of truth for your data.
 ## Instructions
 
 To get started, run `pipenv install` while inside of this directory.
+Then run `pipenv shell` to jump into the shell.
 
 Build out all of the methods listed in the deliverables. The methods are listed
 in a suggested order, but you can feel free to tackle the ones you think are
@@ -60,64 +61,111 @@ build out any helper methods if needed.
 #### Visitor
 
 - `Visitor __init__(self, name)`
-  - Visitor should be initialized with a name
+  - Visitor is initialized with a name
 - `Visitor property name`
-  - Return name
+  - Returns the visitor's name
   - Names must be of type `str`
   - Names must be between 1 and 15 characters, inclusive
-  - `raise Exception` if setter fails
+  - Should **be able** to change after the visitor is instantiated
 
 #### NationalPark
 
 - `NationalPark __init__(self, name)`
-  - national_parks should be initialized with a name, as a string
+  - NationalPark is initialized with a name, as a string
 - `NationalPark property name`
-  - Returns the NationalPark's name
-  - Should not be able to change after the NationalPark is created
-  - `raise Exception` if setter fails
+  - Returns the national_park's name
+  - Names must be of type `str`
+  - Names length must be greater or equal to 3 characters
+  - Should **not be able** to change after the national_park is instantiated
   - _hint: hasattr()_
 
 #### Trip
 
 - `Trip __init__(self, visitor, national_park, start_date, end_date)`
-  - Trips should be initialized with a visitor, national_park, start_date(str), end_date(str)
+  - Trip is initialized with a `Visitor` instance, a `NationalPark` instance, a start_date, and an end_date
+- `Trip property start_date`
+  - Returns the trip's start_date
+  - Start_date must be of type `str`
+  - Start_date length must be greater or equal to 7 characters
+  - Is in the format "September 1st"
+  - Should **be able** to change after the trip is instantiated
+- `Trip property end_date`
+  - Returns the trip's end_date
+  - End_date must be of type `str`
+  - End_date length must be greater or equal to 7 characters
+  - Is in the format "September 1st"
+  - Should **be able** to change after the trip is instantiated
 
 ### Object Relationship Methods and Properties
 
 #### Trip
 
 - `Trip property visitor`
-  - Returns the visitor object for that trip
+  - Returns the Visitor object for that trip
   - Must be of type `Visitor`
-  - `raise Exception` if setter fails
 - `Trip property national_park`
   - Returns the NationalPark object for that trip
   - Must be of type `NationalPark`
-  - `raise Exception` if setter fails
 
-#### Visitors
+#### Visitor
 
 - `Visitor trips()`
   - Returns a list of all trips for that visitor
-  - The list of trips must contain type `Trip`
+  - Trips must be of type `Trip`
 - `Visitor national_parks()`
-  - Returns a **unique** list of all parks who that visitor has visited.
-  - The list of national parks must contain type `NationalPark` 
+  - Returns a **unique** list of all parks that visitor has visited
+  - Parks must be of type `NationalPark` 
 
 #### NationalPark
 
 - `NationalPark trips()`
-  - Returns a list of all trips planned for this national park
-  - The list of trips must contain type `trip`
+  - Returns a list of all trips at a particular national park
+  - Trips must be of type `Trip`
 - `NationalPark visitors()`
-  - Returns a **unique** list of all visitors a national park has recieved
-  - The list of visitors must contain type `Visitor`
+  - Returns a **unique** list of all visitors a particular national park has welcomed
+  - Visitors must be of type `Visitor`
 
 ### Aggregate and Association Methods
 
 #### National Park
 
 - `NationalPark total_visits()`
-  - Returns the total number of times that park has been visited
+  - Returns the total number of times a park has been visited
+  - Returns `0` if the park has no visits 
 - `NationalPark best_visitor()`
-  - Returns the Visitor who has visited the park the most
+  - Returns the Visitor instance that has visited that park the most
+  - Returns `None` if the park has no visitors
+
+#### Visitor
+
+- `Visitor total_visits_at_park(park)`
+  - Receives a **NationalPark object** as argument
+  - Returns the total number of times a visitor visited the park passed in as argument
+  - Returns `0` if the visitor has never visited the park
+
+### Bonus: Aggregate and Association Method
+
+- `NationalPark classmethod most_visited()`
+  - Returns the `NationalPark` instance with the most visits.
+  - Returns `None` if there are no visits.
+  - _hint: will need a way to remember all `NationalPark` objects_
+  - _hint: do you have a method to get the total visits for a
+    particular `NationalPark` object?_
+  - Uncomment lines 127-135 in the national_park_test file
+
+### Bonus: For any invalid inputs raise an `Exception`.
+
+- First, **comment out** the following lines
+  - **national_park_test.py**
+    - lines 34-35
+  - **visitor_test.py**
+    - lines 23-24, 40-41, and 44-45
+  - **trip_test.py**
+    - lines 35-36, 49-50, 78-79, and 92-93
+- Then, **uncomment** the following lines in the test files
+  - **national_park_test.py**
+    - lines 22-23, 26-27, and 38-39
+  - **visitor_test.py**
+    - lines 31-32, 48-49, 52-53
+  - **trip_test.py**
+    - lines 39-40, 53-54, 82-83, 96-97
