@@ -169,3 +169,4 @@ build out any helper methods if needed.
     - lines 31-32, 48-49, 52-53
   - **trip_test.py**
     - lines 39-40, 53-54, 82-83, 96-97
+    
