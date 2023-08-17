@@ -22,15 +22,15 @@ start coding_. Remember to identify a single source of truth for your data.
 
 ## Instructions
 
-To get started, run `pipenv install` while inside of this directory.
-Then run `pipenv shell` to jump into the shell.
+To get started, run `pipenv install` while inside of this directory. Then run
+`pipenv shell` to jump into the shell.
 
 Build out all of the methods listed in the deliverables. The methods are listed
 in a suggested order, but you can feel free to tackle the ones you think are
 easiest. Be careful: some of the later methods rely on earlier ones.
 
-**Remember!** This code challenge has tests to help you check your work. You
-can run `pytest` to make sure your code is functional before submitting.
+**Remember!** This code challenge has tests to help you check your work. You can
+run `pytest` to make sure your code is functional before submitting.
 
 We've provided you with a tool that you can use to test your code. To use it,
 run `python debug.py` from the command line. This will start a `ipdb` session
@@ -82,7 +82,8 @@ build out any helper methods if needed.
 #### Trip
 
 - `Trip __init__(self, visitor, national_park, start_date, end_date)`
-  - Trip is initialized with a `Visitor` instance, a `NationalPark` instance, a start_date, and an end_date
+  - Trip is initialized with a `Visitor` instance, a `NationalPark` instance, a
+    start_date, and an end_date
 - `Trip property start_date`
   - Returns the trip's start_date
   - Start_date must be of type `str`
@@ -114,7 +115,7 @@ build out any helper methods if needed.
   - Trips must be of type `Trip`
 - `Visitor national_parks()`
   - Returns a **unique** list of all parks that visitor has visited
-  - Parks must be of type `NationalPark` 
+  - Parks must be of type `NationalPark`
 
 #### NationalPark
 
@@ -122,7 +123,8 @@ build out any helper methods if needed.
   - Returns a list of all trips at a particular national park
   - Trips must be of type `Trip`
 - `NationalPark visitors()`
-  - Returns a **unique** list of all visitors a particular national park has welcomed
+  - Returns a **unique** list of all visitors a particular national park has
+    welcomed
   - Visitors must be of type `Visitor`
 
 ### Aggregate and Association Methods
@@ -131,7 +133,7 @@ build out any helper methods if needed.
 
 - `NationalPark total_visits()`
   - Returns the total number of times a park has been visited
-  - Returns `0` if the park has no visits 
+  - Returns `0` if the park has no visits
 - `NationalPark best_visitor()`
   - Returns the Visitor instance that has visited that park the most
   - Returns `None` if the park has no visitors
@@ -140,7 +142,8 @@ build out any helper methods if needed.
 
 - `Visitor total_visits_at_park(park)`
   - Receives a **NationalPark object** as argument
-  - Returns the total number of times a visitor visited the park passed in as argument
+  - Returns the total number of times a visitor visited the park passed in as
+    argument
   - Returns `0` if the visitor has never visited the park
 
 ### Bonus: Aggregate and Association Method
@@ -149,8 +152,8 @@ build out any helper methods if needed.
   - Returns the `NationalPark` instance with the most visits.
   - Returns `None` if there are no visits.
   - _hint: will need a way to remember all `NationalPark` objects_
-  - _hint: do you have a method to get the total visits for a
-    particular `NationalPark` object?_
+  - _hint: do you have a method to get the total visits for a particular
+    `NationalPark` object?_
   - Uncomment lines 127-135 in the national_park_test file
 
 ### Bonus: For any invalid inputs raise an `Exception`.
