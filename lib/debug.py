@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 import ipdb
 
-from classes.national_park import NationalPark
-from classes.visitor import Visitor
-from classes.trip import Trip
+from classes.many_to_many import NationalPark
+from classes.many_to_many import Visitor
+from classes.many_to_many import Trip
 
 if __name__ == '__main__':
     print("HELLO! :) let's debug :vibing_potato:")

@@ -1,12 +1,12 @@
 import pytest
 
-from classes.national_park import NationalPark
-from classes.visitor import Visitor
-from classes.trip import Trip
+from classes.many_to_many import NationalPark
+from classes.many_to_many import Visitor
+from classes.many_to_many import Trip
 
 
 class TestNationalParks:
-    """NationalPark in national_park.py"""
+    """NationalPark in many_to_many.py"""
 
     def test_has_name(self):
         """NationalPark is initialized with a name"""
