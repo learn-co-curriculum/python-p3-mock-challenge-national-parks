@@ -3,7 +3,7 @@ class NationalPark:
 
     def __init__(self, name):
         self._name = name
-        type(self).all.append(self)
+        # type(self).all.append(self)
 
     @property
     def name(self):
@@ -11,13 +11,13 @@ class NationalPark:
     
     @name.setter
     def name(self, name):
-        if isinstance(name, str) and not hasattr(self, "name"):
+        if isinstance(name, str) and len(name) >= 3 and not hasattr(self, "_name"):
             self._name = name
         # else:
         #     raise Exception 
         
     def trips(self):
-        return [trip for trip in Trip.all if trip.national_park is self]
+        return [trip for trip in Trip.all if trip.national_park == self]
     
     def visitors(self):
         return list({trip.visitor for trip in self.trips()})
@@ -29,16 +29,37 @@ class NationalPark:
         visitors = [trip.visitor for trip in self.trips()]
         return max(set(visitors), key=visitors.count)
 
-
 class Trip:
     all = []
     
     def __init__(self, visitor, national_park, start_date, end_date):
-        self.visitor = visitor
-        self.national_park = national_park
-        self.start_date = start_date
-        self.end_date = end_date
-        type(self).all.append(self)
+        self._visitor = visitor
+        self._national_park = national_park
+        self._start_date = start_date
+        self._end_date = end_date
+        Trip.all.append(self)
+
+    @property
+    def visitor(self):
+        return self._visitor 
+    
+    @visitor.setter
+    def name(self, visitor):
+        if isinstance(visitor, Visitor):
+            self._visitor = visitor
+    #     # else:
+    #     #     raise Exception 
+            
+    @property 
+    def national_park(self):
+        return self._national_park
+    
+    @national_park.setter 
+    def national_park(self, national_park):
+        if isinstance(national_park, NationalPark):
+            self._national_park = national_park
+        # else:
+        #     raise Exception
 
     @property
     def start_date(self):
@@ -62,24 +83,12 @@ class Trip:
         # else:
         #     raise Exception 
             
-    @property 
-    def national_park(self):
-        return self._national_park
-    
-    @national_park.setter 
-    def national_park(self, national_park):
-        if isinstance(national_park, NationalPark):
-            self._national_park = national_park
-        # else:
-        #     raise Exception
-
-
 class Visitor:
     all = []
 
     def __init__(self, name):
         self.name = name
-        type(self).all.append(self)
+        # type(self).all.append(self)
 
     @property
     def name(self):
@@ -91,18 +100,6 @@ class Visitor:
             self._name = name
         # else:
         #     raise Exception
-        
-    # @property
-    # def visitor(self):
-    #     return self._visitor 
-    
-    # @visitor.setter
-    # def name(self, visitor):
-    #     if isinstance(visitor, Visitor):
-    #         self._visitor = visitor
-    #     # else:
-    #     #     raise Exception 
-    
         
     def trips(self):
         return [trip for trip in Trip.all if trip.visitor == self]
